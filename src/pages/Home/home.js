@@ -3,7 +3,7 @@ import fileDownload from "js-file-download";
 import axios from "axios";
 import "./home.scss";
 import foto from "./../../IMG_20220331_123215-removebg-preview.png";
-import splash from "./../../luca-nicoletti-O8CHmj0zgAg-unsplash-removebg-preview.png";
+// import splash from "./../../luca-nicoletti-O8CHmj0zgAg-unsplash-removebg-preview.png";
 
 function App() {
     const [mouseCoordinates, setMouseCoordinates] = useState({ x: 0, y: 0 });
@@ -48,7 +48,8 @@ function App() {
         axios({
             url: 'http://localhost:3000',
             method: 'GET',
-            responseType: 'blob'
+            responseType: 'blob',
+            // withCredentials: 'include'
         }).then((res) => {
             console.log(res);
             fileDownload(res.data, 'download.pdf')
