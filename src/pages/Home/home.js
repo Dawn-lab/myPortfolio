@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
+import fileDownload from "js-file-download";
+import axios from "axios";
 import "./home.scss";
 import foto from "./../../IMG_20220331_123215-removebg-preview.png";
 import splash from "./../../luca-nicoletti-O8CHmj0zgAg-unsplash-removebg-preview.png";
@@ -40,12 +42,25 @@ function App() {
         };
     }, []);
 
+
+    const download = (e) => {
+        e.preventDefault();
+        axios({
+            url: 'http://localhost:3000',
+            method: 'GET',
+            responseType: 'blob'
+        }).then((res) => {
+            console.log(res);
+            fileDownload(res.data, 'download.pdf')
+        })
+
+    }
     return (
         <React.Fragment>
             <div className="home-page">
                 <div className="image-wrapper">
                     <img className="image" src={foto} alt=""></img>
-                    <img className="splash" src={splash} alt=""></img>
+                    {/* <img className="splash" src={splash} alt=""></img> */}
                 </div>
                 <div className="app">
                     {/* <h2>This is the home page</h2> */}
@@ -57,7 +72,7 @@ function App() {
                             A full Stack developer with incredible skills in creating successful websites that meet customer needs. I am proficient enough in NodeJS, ReactJs, MongoDB, TypeScript/JavaScript; well-versed in design standards and user preferences.
                         </p>
                         <div className="btns">
-                            <button className="btn">Download Resume</button>
+                            <button className="btn" onClick={(e) => download(e)}>Download Resume</button>
                             <button className="btn">Hire me</button>
                         </div>
                     </div>
