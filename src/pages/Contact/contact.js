@@ -15,12 +15,12 @@ function Contact() {
                     action="https://formspree.io/f/mnqwbple"
                     method="POST"
                 >
-                    <div class="container">
+                    <div className="container">
                         <h1> Hi Julius, </h1>{" "}
-                        <div class="info">
+                        <div className="info">
                             <div> I am </div>{" "}
-                            <div class="input-box">
-                                <div class="small"> First Name and Last Name * </div>{" "}
+                            <div className="input-box">
+                                <div className="small"> First Name and Last Name * </div>{" "}
                                 <input
                                     maxlength="96"
                                     placeholder="First Name Last Name"
@@ -31,8 +31,8 @@ function Contact() {
                                 />
                             </div>{" "}
                             <div> from </div>{" "}
-                            <div class="input-box">
-                                <div class="small"> Company Name </div>{" "}
+                            <div className="input-box">
+                                <div className="small"> Company Name </div>{" "}
                                 <input
                                     maxlength="100"
                                     placeholder="Company Name"
@@ -43,7 +43,7 @@ function Contact() {
                             </div>{" "}
                         </div>{" "}
                         <div> and I’ m contacting you to *: </div>{" "}
-                        <div class="smaller">
+                        <div className="smaller">
                             Please state reason(s) why you 're reaching out:{" "}
                         </div>{" "}
                         <div>
@@ -51,25 +51,25 @@ function Contact() {
                                 <label for="message"> Your Message goes below </label>{" "}
                                 {/* <br> */}{" "}
                                 <textarea
-                                    class="message"
+                                    className="message"
                                     name="message"
                                     id="someText"
                                     required
                                 ></textarea>{" "}
                             </legend>{" "}
                         </div>{" "}
-                        <div class="complete">
-                            <div class="contacts">
-                                <div class="input-box">
-                                    <div class="q">
+                        <div className="complete">
+                            <div className="contacts">
+                                <div className="input-box">
+                                    <div className="q">
                                         ?
-                                        <div class="why" id="hidden">
+                                        <div className="why" id="hidden">
                                             We ask for your contact info to enable communication
                                             between You and Julius.We will never share it with 3 rd
                                             party sources.{" "}
                                         </div>{" "}
                                     </div>{" "}
-                                    <div class="small"> Email address * </div>{" "}
+                                    <div className="small"> Email address * </div>{" "}
                                     <input
                                         placeholder="Email address"
                                         type="text"
@@ -78,8 +78,8 @@ function Contact() {
                                         required
                                     />
                                 </div>{" "}
-                                <div class="input-box">
-                                    <div class="small"> Phone number </div>{" "}
+                                <div className="input-box">
+                                    <div className="small"> Phone number </div>{" "}
                                     <input
                                         maxlength="20"
                                         placeholder="Phone number"
@@ -89,10 +89,10 @@ function Contact() {
                                     />
                                 </div>{" "}
                             </div>{" "}
-                            <div class="right">
+                            <div className="right">
                                 <div> Looking forward to hearing from you! </div>{" "}
-                                <div class="fullName"> First Name Last Name </div>{" "}
-                                <button class="btn" type="submit">
+                                <div className="fullName"> First Name Last Name </div>{" "}
+                                <button className="btn" type="submit">
                                     {" "}
                                     SEND→{" "}
                                 </button>{" "}
@@ -103,14 +103,14 @@ function Contact() {
                 </form>{" "}
             </article>{" "}
             <footer>
-                <div class="socials">
-                    <span class="invert git">
+                <div className="socials">
+                    <span className="invert git">
                         <img src="./assets/svg/github.svg" alt="" />{" "}
                     </span>{" "}
-                    <span class="twitter">
+                    <span className="twitter">
                         <img src="./assets/svg/twitter-color.svg" alt="" />{" "}
                     </span>{" "}
-                    <span class="linkedin">
+                    <span className="linkedin">
                         <img src="./assets/svg/linkedin-square-color.svg" alt="" />{" "}
                     </span>{" "}
                 </div>{" "}
