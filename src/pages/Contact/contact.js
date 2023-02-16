@@ -1,7 +1,21 @@
 import React from "react";
+import { useState } from "react";
 import "./contact.scss"
 
 function Contact() {
+
+
+
+    const[name, setName] = useState('');
+
+    const[companyName, setCompanyName] = useState('');
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert(`The name you entered was: ${name}`)
+    }
+
+
     return (
         <>
             <article>
@@ -14,6 +28,7 @@ function Contact() {
                     id="my-form"
                     action="https://formspree.io/f/mnqwbple"
                     method="POST"
+                    onSubmit={handleSubmit}
                 >
                     <div className="container">
                         <h1> Hi Julius, </h1>{" "}
@@ -25,9 +40,10 @@ function Contact() {
                                     maxlength="96"
                                     placeholder="First Name Last Name"
                                     type="text"
-                                    value=""
+                                    value={name}
                                     name="fullName"
                                     required
+                                    onChange={(e) => setName(e.target.value)}
                                 />
                             </div>{" "}
                             <div> from </div>{" "}
@@ -37,8 +53,9 @@ function Contact() {
                                     maxlength="100"
                                     placeholder="Company Name"
                                     type="text"
-                                    value=""
+                                    value={companyName}
                                     name="companyName"
+                                    onChange={(e) => setCompanyName(e.target.value)}
                                 />
                             </div>{" "}
                         </div>{" "}
