@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import fileDownload from "js-file-download";
 import axios from "axios";
-import "./home.scss";
+import { Button, Container, Row, Col } from "react-bootstrap"
+// import "./home.scss";
 import foto from "./../../IMG_20220331_123215-removebg-preview.png";
 // import splash from "./../../luca-nicoletti-O8CHmj0zgAg-unsplash-removebg-preview.png";
 
-function App() {
+function Home() {
     const [mouseCoordinates, setMouseCoordinates] = useState({ x: 0, y: 0 });
 
     const eyeLeft = useRef();
@@ -58,12 +59,13 @@ function App() {
     }
     return (
         <React.Fragment>
-            <div className="home-page">
-                <div className="image-wrapper">
+            <Container>
+                <Row>
+                <Col sm={4} className="image-wrapper">
                     <img className="image" src={foto} alt=""></img>
                     {/* <img className="splash" src={splash} alt=""></img> */}
-                </div>
-                <div className="app">
+                </Col>
+                <Col sm={8} className="app">
                     {/* <h2>This is the home page</h2> */}
                     <div className="intro">
                         <h1 className="name">IRUNGU G.</h1>
@@ -73,8 +75,8 @@ function App() {
                             A full Stack developer with incredible skills in creating successful websites that meet customer needs. I am proficient enough in NodeJS, ReactJs, MongoDB, TypeScript/JavaScript; well-versed in design standards and user preferences.
                         </p>
                         <div className="btns">
-                            <button className="btn" onClick={(e) => download(e)}>Download Resume</button>
-                            <button className="btn">Hire me</button>
+                            <Button variant="dark" onClick={(e) => download(e)}>Download Resume</Button>
+                            <Button variant="dark">Hire me</Button>
                         </div>
                     </div>
                     <div className="images apps brows">
@@ -99,10 +101,11 @@ function App() {
                             ></div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </Col>
+                </Row>
+            </Container>
         </React.Fragment>
     );
 }
 
-export default App;
+export default Home;

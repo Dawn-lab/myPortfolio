@@ -1,11 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import "./contact.scss";
-import "./../Home/home.scss"
+import { Button, Form } from "react-bootstrap"
+// import "./contact.scss";
+// import "./../Home/home.scss"
 
 function Contact() {
-
-
 
     const[name, setName] = useState('');
     const[companyName, setCompanyName] = useState('');
@@ -26,7 +25,7 @@ function Contact() {
                     Please complete the form below so we can forward your contact request
                     to Julius Githinji:
                 </h2>
-                <form
+                <Form
                     id="my-form"
                     action="https://formspree.io/f/mnqwbple"
                     method="POST"
@@ -113,15 +112,15 @@ function Contact() {
                             <div className="right">
                                 <div> Looking forward to hearing from you! </div>
                                 <div className="fullName"> First Name Last Name </div>
-                                <button className="btn submit" type="submit">
+                                <Button variant="dark" type="submit">
                                     
                                     Submit
-                                </button>
+                                </Button>
                                 <div id="status"> </div>
                             </div>
                         </div>
                     </div>
-                </form>
+                </Form>
             </article>
             <footer>
                 <div className="socials">
