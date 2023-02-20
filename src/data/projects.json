@@ -2,26 +2,31 @@
     {
         "id": 1,
         "title": "e-shop",
-        "tools": "ReactJS, JS"
+        "tools": "ReactJS, JS",
+        "link": "https://github.com/Dawn-lab/eshop"
     },
     {
         "id": 4,
-        "title": "tsx-e-shop",
-        "tools": "ReactJS, TS"
+        "title": "ts-e-shop",
+        "tools": "ReactJS, TS",
+        "link": "https://github.com/Dawn-lab/ts-e-shop"
     },
     {
         "id": 3,
         "title": "my_portfolio",
-        "tools": "NodeJS, ReactJS, JS"
+        "tools": "NodeJS, ReactJS, JS",
+        "link": "https://github.com/Dawn-lab/myportfolio"
     },
     {
         "id": 2,
         "title": "News Website",
-        "tools": "NodeJS, ReactJS, JS, EJS, CSS, HTML"
+        "tools": "NodeJS, ReactJS, JS, EJS, CSS, HTML",
+        "link": "https://github.com/Julieus-G/News-Website"
     },
     {
         "id": 5,
         "title": "Data Structures and Algorithms",
-        "tools": "ReactJS, JS"
+        "tools": "ReactJS, JS",
+        "link": "https://github.com/Julieus-G/Algorithms"
     }
 ]

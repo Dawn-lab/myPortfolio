@@ -21,7 +21,7 @@ function Project() {
                             <Card.Text>
                                 {Project.tools}
                             </Card.Text>
-                            <Button variant="dark">Visit Site</Button>
+                            <Button variant="dark" href={project.link}>Visit Repository</Button>
                         </Card.Body>
                     </Card>
                     </Container>

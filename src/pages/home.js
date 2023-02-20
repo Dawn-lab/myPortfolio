@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import fileDownload from "js-file-download";
 import axios from "axios";
 import { Button, Container, Row, Col } from "react-bootstrap"
-// import "./home.scss";
+import "bootstrap/dist/css/bootstrap.min.css"
+import "./Home/home.scss";
 import foto from "./../IMG_20220331_123215-removebg-preview.png";
 // import splash from "./../../luca-nicoletti-O8CHmj0zgAg-unsplash-removebg-preview.png";
 
@@ -66,16 +67,17 @@ function Home() {
                     {/* <img className="splash" src={splash} alt=""></img> */}
                 </Col>
                 <Col sm={8} className="app">
+                    <div></div>
                     {/* <h2>This is the home page</h2> */}
                     <div className="intro">
-                        <h1 className="name">IRUNGU G.</h1>
+                        <h1 className="name" style={{fontWeight: "700"}}>IRUNGU G.</h1>
                         <h3>Hello_</h3>
                         <h2>I'm a Software Developer</h2>
                         <p>
                             A full Stack developer with incredible skills in creating successful websites that meet customer needs. I am proficient enough in NodeJS, ReactJs, MongoDB, TypeScript/JavaScript; well-versed in design standards and user preferences.
                         </p>
                         <div className="btns">
-                            <Button variant="dark" onClick={(e) => download(e)}>Download Resume</Button>
+                            <Button variant="dark" style={{marginRight: "0.7%"}} onClick={(e) => download(e)}>Download Resume</Button>
                             <Button variant="dark">Hire me</Button>
                         </div>
                     </div>
