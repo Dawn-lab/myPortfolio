@@ -3,7 +3,7 @@ import fileDownload from "js-file-download";
 import axios from "axios";
 import { Button, Container, Row, Col } from "react-bootstrap"
 // import "./home.scss";
-import foto from "./../../IMG_20220331_123215-removebg-preview.png";
+import foto from "./../IMG_20220331_123215-removebg-preview.png";
 // import splash from "./../../luca-nicoletti-O8CHmj0zgAg-unsplash-removebg-preview.png";
 
 function Home() {

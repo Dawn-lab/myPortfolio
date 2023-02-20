@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 // import Layout from './pages/Layout/layout';
-import Home from './pages/Home/home';
-import Contact from './pages/Contact/contact';
+import Home from './pages/home';
+import Contact from './pages/contact';
 import Project from './pages/projects';
 import { Container } from 'react-bootstrap';
 import NavBar from './components/navBar';
