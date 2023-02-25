@@ -56,7 +56,7 @@ function Home() {
             // withCredentials: 'include'
         }).then((res) => {
             console.log(res);
-            fileDownload(res.data, 'download.pdf')
+            fileDownload(res.data, "Julius'resume.pdf")
         })
 
     }
@@ -64,11 +64,11 @@ function Home() {
         <React.Fragment>
             <Container>
                 <Row>
-                    <Col sm={4} className="image-wrapper">
+                    <Col sm={4} className=" homescreen image-wrapper">
                         <img className="image" src={foto} alt=""></img>
                         {/* <img className="splash" src={splash} alt=""></img> */}
                     </Col>
-                    <Col sm={8} className="app">
+                    <Col sm={8} className="homescreen app">
                         <div></div>
                         {/* <h2>This is the home page</h2> */}
                         <div className="intro">

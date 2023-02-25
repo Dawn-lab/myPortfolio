@@ -1,5 +1,6 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from '@emailjs/browser';
 import { Button, Form } from "react-bootstrap"
 import 'react-phone-number-input/style.css'
 import PhoneInput, { isPossiblePhoneNumber, isValidPhoneNumber, formatPhoneNumberIntl } from 'react-phone-number-input'
@@ -12,6 +13,18 @@ function Contact() {
     const [companyName, setCompanyName] = useState('');
     const [emailAddress, setEmailAddress] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
+    const form = useRef();
+
+    const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_exyevns', 'template_bp5zj1l', form.current, 'Yx7tZ--XxBoDSR67Kw')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+    };
 
     const notify = () => {
         // toast("Form submitted successfully👍");
@@ -20,35 +33,36 @@ function Contact() {
         });
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        alert(`The name you entered was: ${name}`)
-    }
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     alert(`The name you entered was: ${name}`)
+    // }
 
 
     return (
         <>
             <Form
+                ref={form}
                 id="my-form"
                 method="POST"
-                onSubmit={handleSubmit}
+                onSubmit={sendEmail}
             >
 
                 <h4> Hi Julius, </h4>
                 <div className="info">
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                         <Form.Label>I am </Form.Label>
-                        <Form.Control type="text" value={name} maxLength="96" placeholder="First Name and Last Name" onChange={(e) => setName(e.target.value)} required />
+                        <Form.Control type="text" value={name} maxLength="96" name="user_name" placeholder="First Name and Last Name" onChange={(e) => setName(e.target.value)} required />
                     </Form.Group>
                     <div> from </div>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                         <Form.Label>Company Name</Form.Label>
-                        <Form.Control type="text" value={companyName} maxLength="100" placeholder="Company's name(optional)" onChange={(e) => setCompanyName(e.target.value)} />
+                        <Form.Control type="text" value={companyName} name="user_company" maxLength="100" placeholder="Company's name(optional)" onChange={(e) => setCompanyName(e.target.value)} />
                     </Form.Group>
                 </div>
                 <div> and I'm contacting you to *: </div>
                 <div className="smaller">
-                    Please state reason(s) why you 're reaching out:
+                    Please state reason(s) why you are reaching out:
                 </div>
                 <div>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
@@ -62,13 +76,13 @@ function Contact() {
                             <div className="q">
                                 <div className="why" id="hidden">
                                     We ask for your contact info to enable communication
-                                    between You and Julius. We will never share it with 3 rd
+                                    between You and Julius. We will never share it with 3rd
                                     party sources.
                                 </div>
                             </div>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                 <Form.Label>Email address * </Form.Label>
-                                <Form.Control type="email" required value={emailAddress} onChange={(e) => setEmailAddress(e.target.value)} placeholder="name@example.com" />
+                                <Form.Control type="email" name="user_email" required value={emailAddress} onChange={(e) => setEmailAddress(e.target.value)} placeholder="name@example.com" />
                             </Form.Group>
                         </div>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -76,6 +90,7 @@ function Contact() {
                             <PhoneInput
                                 placeholder="Enter phone number"
                                 value={phoneNumber}
+                                name="user_number"
                                 onChange={(value) => setPhoneNumber(value)} />
                             {
                                 phoneNumber && isPossiblePhoneNumber(phoneNumber) && isValidPhoneNumber(phoneNumber) ? `This is a valid phone number with its international format as ${formatPhoneNumberIntl(phoneNumber)}` : "This is not a valid phone number!"
@@ -86,7 +101,7 @@ function Contact() {
                         <div> Looking forward to hearing from you! </div>
                         <div className="fullName"> First Name Last Name </div>
                         <div>
-                            <Button variant="dark" type="submit" onClick={notify}>
+                            <Button variant="dark" type="submit" value="send" onClick={notify}>
                                 Submit
                             </Button>
                             <ToastContainer />
