@@ -5,6 +5,8 @@ import { Button, Container, Row, Col } from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./Home/home.scss";
 import foto from "./../IMG_20220331_123215-removebg-preview.png";
+import { NavLink } from "react-router-dom"
+
 // import splash from "./../../luca-nicoletti-O8CHmj0zgAg-unsplash-removebg-preview.png";
 
 function Home() {
@@ -62,48 +64,50 @@ function Home() {
         <React.Fragment>
             <Container>
                 <Row>
-                <Col sm={4} className="image-wrapper">
-                    <img className="image" src={foto} alt=""></img>
-                    {/* <img className="splash" src={splash} alt=""></img> */}
-                </Col>
-                <Col sm={8} className="app">
-                    <div></div>
-                    {/* <h2>This is the home page</h2> */}
-                    <div className="intro">
-                        <h1 className="name" style={{fontWeight: "700"}}>IRUNGU G.</h1>
-                        <h3>Hello_</h3>
-                        <h2>I'm a Software Developer</h2>
-                        <p>
-                            A full Stack developer with incredible skills in creating successful websites that meet customer needs. I am proficient enough in NodeJS, ReactJs, MongoDB, TypeScript/JavaScript; well-versed in design standards and user preferences.
-                        </p>
-                        <div className="btns">
-                            <Button variant="dark" style={{marginRight: "0.7%"}} onClick={(e) => download(e)}>Download Resume</Button>
-                            <Button variant="dark">Hire me</Button>
+                    <Col sm={4} className="image-wrapper">
+                        <img className="image" src={foto} alt=""></img>
+                        {/* <img className="splash" src={splash} alt=""></img> */}
+                    </Col>
+                    <Col sm={8} className="app">
+                        <div></div>
+                        {/* <h2>This is the home page</h2> */}
+                        <div className="intro">
+                            <h1 className="name" style={{ fontWeight: "700" }}>IRUNGU G.</h1>
+                            <h3>Hello_</h3>
+                            <h2>I'm a Software Developer</h2>
+                            <p>
+                                A full Stack developer with incredible skills in creating successful websites that meet customer needs. I am proficient enough in NodeJS, ReactJs, MongoDB, TypeScript/JavaScript; well-versed in design standards and user preferences.
+                            </p>
+                            <div className="btns">
+                                <Button variant="dark" style={{ marginRight: "0.7%" }} onClick={(e) => download(e)}>Download Resume</Button>
+                                <NavLink to="/contact" as={NavLink}>
+                                    <Button variant="dark">Hire me</Button>
+                                </NavLink>
+                            </div>
                         </div>
-                    </div>
-                    <div className="images apps brows">
-                        <div className="eyebrow_container">
-                            <div ref={eyeBrowLeft} className="eye_brow left"></div>
-                            <div ref={eyeBrowRight} className="eye_brow right"></div>
+                        <div className="images apps brows">
+                            <div className="eyebrow_container">
+                                <div ref={eyeBrowLeft} className="eye_brow left"></div>
+                                <div ref={eyeBrowRight} className="eye_brow right"></div>
+                            </div>
+                            <div className="eye_container">
+                                <div
+                                    ref={eyeLeft}
+                                    style={{
+                                        transform: `rotate(${calcAngle(eyeLeft)}deg)`,
+                                    }}
+                                    className="eye"
+                                ></div>
+                                <div
+                                    ref={eyeRight}
+                                    style={{
+                                        transform: `rotate(${calcAngle(eyeRight)}deg)`,
+                                    }}
+                                    className="eye"
+                                ></div>
+                            </div>
                         </div>
-                        <div className="eye_container">
-                            <div
-                                ref={eyeLeft}
-                                style={{
-                                    transform: `rotate(${calcAngle(eyeLeft)}deg)`,
-                                }}
-                                className="eye"
-                            ></div>
-                            <div
-                                ref={eyeRight}
-                                style={{
-                                    transform: `rotate(${calcAngle(eyeRight)}deg)`,
-                                }}
-                                className="eye"
-                            ></div>
-                        </div>
-                    </div>
-                </Col>
+                    </Col>
                 </Row>
             </Container>
         </React.Fragment>
