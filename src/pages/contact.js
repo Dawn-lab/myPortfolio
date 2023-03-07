@@ -6,6 +6,8 @@ import 'react-phone-number-input/style.css'
 import PhoneInput, { isPossiblePhoneNumber, isValidPhoneNumber, formatPhoneNumberIntl } from 'react-phone-number-input'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FaGithub } from 'react-icons/fa';
+// import github from '../assets/github-icon-1.svg'
 
 function Contact() {
 
@@ -16,14 +18,16 @@ function Contact() {
     const form = useRef();
 
     const sendEmail = (e) => {
-    e.preventDefault();
+        e.preventDefault();
 
-    emailjs.sendForm('service_exyevns', 'template_bp5zj1l', form.current, 'Yx7tZ--XxBoDSR67Kw')
-        .then((result) => {
-            console.log(result.text);
-        }, (error) => {
-            console.log(error.text);
-        });
+        emailjs.sendForm('service_13rqegh', 'template_2bu6sye', form.current, 'rvpDnRFjdCaR3M3by')
+            .then((result) => {
+                console.log(result.text);
+                e.target.reset()
+                alert(`The name you entered was: ${name}`)
+            }, (error) => {
+                console.log(error.text);
+            });
     };
 
     const notify = () => {
@@ -33,14 +37,23 @@ function Contact() {
         });
     }
 
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
     //     alert(`The name you entered was: ${name}`)
     // }
 
 
     return (
         <>
+            {/* <form ref={form} onSubmit={sendEmail}>
+                <label>Name</label>
+                <input type="text" name="user_name" />
+                <label>Email</label>
+                <input type="email" name="user_email" />
+                <label>Message</label>
+                <textarea name="message" />
+                <input type="submit" value="Send" />
+            </form> */}
             <Form
                 ref={form}
                 id="my-form"
@@ -60,14 +73,14 @@ function Contact() {
                         <Form.Control type="text" value={companyName} name="user_company" maxLength="100" placeholder="Company's name(optional)" onChange={(e) => setCompanyName(e.target.value)} />
                     </Form.Group>
                 </div>
-                <div> and I'm contacting you to *: </div>
-                <div className="smaller">
+                <div> and I'm contacting you to: </div>
+                {/* <div className="smaller">
                     Please state reason(s) why you are reaching out:
-                </div>
+                </div> */}
                 <div>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                         <Form.Label>Your Message goes here</Form.Label>
-                        <Form.Control as="textarea" rows={3} />
+                        <Form.Control as="textarea" name="message" rows={3} />
                     </Form.Group>
                 </div>
                 <div className="complete">
@@ -76,8 +89,7 @@ function Contact() {
                             <div className="q">
                                 <div className="why" id="hidden">
                                     We ask for your contact info to enable communication
-                                    between You and Julius. We will never share it with 3rd
-                                    party sources.
+                                    between You and Julius.
                                 </div>
                             </div>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -98,8 +110,8 @@ function Contact() {
                         </Form.Group>
                     </div>
                     <div className="right">
-                        <div> Looking forward to hearing from you! </div>
-                        <div className="fullName"> First Name Last Name </div>
+                        <div className="fullName"> Thank you { !`${name}` ? "..." : `${name}` } </div>
+                        <div> Julius will get back to you in a few! </div>
                         <div>
                             <Button variant="dark" type="submit" value="send" onClick={notify}>
                                 Submit
@@ -113,7 +125,8 @@ function Contact() {
             <footer>
                 <div className="socials">
                     <span className="git">
-                        <img src="./assets/svg/github.svg" alt="" />
+                        {/* <img src={github} alt="" /> */}
+                        <FaGithub/>
                     </span>
                     <span className="twitter">
                         <img src="./assets/svg/twitter-color.svg" alt="" />
@@ -122,7 +135,7 @@ function Contact() {
                         <img src="./assets/svg/linkedin-square-color.svg" alt="" />
                     </span>
                 </div>
-                & copy; Julius Githinji• 2023
+                Julius Githinji • 2023
             </footer>
         </>
     );
