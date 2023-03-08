@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import fileDownload from "js-file-download";
-import axios from "axios";
+// import fileDownload from "js-file-download";
+// import axios from "axios";
 import { Button, Container, Row, Col } from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./Home/home.scss";
@@ -47,19 +47,19 @@ function Home() {
     }, []);
 
 
-    const download = (e) => {
-        e.preventDefault();
-        axios({
-            url: 'http://localhost:3000',
-            method: 'GET',
-            responseType: 'blob',
-            // withCredentials: 'include'
-        }).then((res) => {
-            console.log(res);
-            fileDownload(res.data, "Julius'resume.pdf")
-        })
+    // const download = (e) => {
+    //     e.preventDefault();
+    //     axios({
+    //         url: 'http://localhost:3000',
+    //         method: 'GET',
+    //         responseType: 'blob',
+    //         // withCredentials: 'include'
+    //     }).then((res) => {
+    //         console.log(res);
+    //         fileDownload(res.data, "Julius'resume.pdf")
+    //     })
 
-    }
+    // }
     return (
         <React.Fragment>
             <Container>
@@ -79,7 +79,11 @@ function Home() {
                                 A full Stack developer with incredible skills in creating successful websites that meet customer needs. I am proficient enough in NodeJS, ReactJs, MongoDB, TypeScript/JavaScript; well-versed in design standards and user preferences.
                             </p>
                             <div className="btns">
-                                <Button variant="dark" style={{ marginRight: "0.7%" }} onClick={(e) => download(e)}>Download Resume</Button>
+                                <a href="My Resume..pdf" download='My Resume..pdf'>
+                                {/* <Button variant="dark" style={{ marginRight: "0.7%" }} onClick={(e) => download(e)}>Download Resume</Button> */}
+                                <Button variant="dark" style={{ marginRight: "0.7%" }}>Download Resume</Button>
+                                    {/* <Button>download</Button> */}
+                                </a>
                                 <NavLink to="/contact" as={NavLink}>
                                     <Button variant="dark">Hire me</Button>
                                 </NavLink>

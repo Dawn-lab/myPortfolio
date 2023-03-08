@@ -2,11 +2,14 @@ import React from "react";
 import { useState, useRef } from "react";
 import emailjs from '@emailjs/browser';
 import { Button, Form } from "react-bootstrap"
+// import Alert from 'react-bootstrap/Alert';
 import 'react-phone-number-input/style.css'
 import PhoneInput, { isPossiblePhoneNumber, isValidPhoneNumber, formatPhoneNumberIntl } from 'react-phone-number-input'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+// import NavLink from "react-bootstrap";
+import { NavLink } from "react-router-dom"
 // import github from '../assets/github-icon-1.svg'
 
 function Contact() {
@@ -17,25 +20,39 @@ function Contact() {
     const [phoneNumber, setPhoneNumber] = useState('');
     const form = useRef();
 
+
     const sendEmail = (e) => {
         e.preventDefault();
 
         emailjs.sendForm('service_13rqegh', 'template_2bu6sye', form.current, 'rvpDnRFjdCaR3M3by')
             .then((result) => {
                 console.log(result.text);
-                e.target.reset()
-                alert(`The name you entered was: ${name}`)
+                // e.target.reset()
+                // alert(`The name you entered was: ${name}`)
+
+                // Resetting the form on submission
+                setName('')
+                setCompanyName('')
+                setEmailAddress('')
+                setPhoneNumber('')
             }, (error) => {
                 console.log(error.text);
             });
     };
 
     const notify = () => {
-        // toast("Form submitted successfully👍");
-        toast.info("Form submitted successfully👍", {
-            position: toast.POSITION.BOTTOM_CENTER
-        });
+        if (name && emailAddress) {
+            toast.info("Form submitted successfully👍", {
+                position: toast.POSITION.BOTTOM_CENTER
+            });
+        } else {
+            alert("Please fill the names and email address fields to submit!")
+            // <Alert variant="danger">
+            //     Please fill the names and email address fields to submit!
+            // </Alert>
+        }
     }
+
 
     // const handleSubmit = (e) => {
     //     e.preventDefault();
@@ -110,8 +127,8 @@ function Contact() {
                         </Form.Group>
                     </div>
                     <div className="right">
-                        <div className="fullName"> Thank you { !`${name}` ? "..." : `${name}` } </div>
-                        <div> Julius will get back to you in a few! </div>
+                        <div className="fullName"> Thank you {!`${name}` ? "..." : `${name}`} </div>
+                        <div> Julius will get back to you in a few</div>
                         <div>
                             <Button variant="dark" type="submit" value="send" onClick={notify}>
                                 Submit
@@ -124,16 +141,27 @@ function Contact() {
             </Form>
             <footer>
                 <div className="socials">
+                    <NavLink to="https://github.com/Dawn-lab" as={NavLink}>
+
+                    </NavLink>
                     <span className="git">
                         {/* <img src={github} alt="" /> */}
-                        <FaGithub/>
+                        <Button variant="none"><FaGithub /></Button>
                     </span>
-                    <span className="twitter">
-                        <img src="./assets/svg/twitter-color.svg" alt="" />
-                    </span>
-                    <span className="linkedin">
-                        <img src="./assets/svg/linkedin-square-color.svg" alt="" />
-                    </span>
+                    <NavLink to="https://twitter.com/Julieus_G" as={NavLink}>
+
+                        <span className="twitter">
+                            {/* <img src="./assets/svg/twitter-color.svg" alt="" /> */}
+                            <Button variant="none"><FaTwitter /></Button>
+                        </span>
+                    </NavLink>
+                    <NavLink to="https://www.linkedin.com/in/julieus/" as={NavLink}>
+
+                        <span className="linkedin">
+                            {/* <img src="./assets/svg/linkedin-square-color.svg" alt="" /> */}
+                            <Button variant="none"><FaLinkedinIn /></Button>
+                        </span>
+                    </NavLink>
                 </div>
                 Julius Githinji • 2023
             </footer>
