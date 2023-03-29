@@ -1,19 +1,16 @@
-
-
-.image-wrapper{
+.image-wrapper {
   position: relative;
   // background-color: greenyellow;
   height: auto;
-  padding: 2% ;
+  padding: 2%;
   text-align: center;
   // margin-top: 502px;
   padding-top: 18%;
-  
-  // margin-left: 70px;
 
+  // margin-left: 70px;
 }
 
-.images{
+.images {
   display: flex;
   justify-content: center;
   // background-color: blueviolet;
@@ -23,7 +20,7 @@
 //   // background-color: green;
 // }
 
-.image{
+.image {
   position: relative;
   width: 90%px;
   height: 444px;
@@ -35,24 +32,22 @@
   // background-color: #000;
 }
 @keyframes animateUser {
-  50%{
+  50% {
     right: 3px;
     top: -20px;
   }
 }
 
-
-
 .app {
-    // height: 100vh;
-    // padding-top: 300px;
-    display: flex;
-    align-items: center;
-    // justify-content: center;
-    flex-direction: column;
-    gap: 40px;
-    // background-color: #000;
-    margin-top: 11rem;
+  // height: 100vh;
+  // padding-top: 300px;
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+  // background-color: #000;
+  margin-top: 11rem;
 }
 .apps {
   // height: 480px;
@@ -64,85 +59,84 @@
   flex-direction: column;
   gap: 40px;
 }
-    .eyebrow_container {
-      display: flex;
-      gap: 50px;
-  
-      .eye_brow {
-        width: 90px;
-        height: 15px;
-        border-radius: 10px;
-        background-color: rgb(49, 41, 41);
-      }
-  
-      .left {
-        rotate: -20deg;
-        border-bottom-left-radius: 0px;
-        border-top-left-radius: 90px;
-      }
-      .right {
-        rotate: 20deg;
-        border-bottom-right-radius: 0px;
-        border-top-right-radius: 90px;
-      }
-    }
-  
-    .eye_container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 30px;
-  
-      .eye {
-        position: relative;
-        display: inline-block;
-        border-radius: 50%;
-        height: 60px;
-        width: 60px;
-        background: #fff;
-        box-shadow: inset 0 0 50px rgb(0, 0, 0);
-        transition: scale 0.5s, background-color 0.5s, box-shadow 0.5s;
-  
-        &:hover {
-          box-shadow: inset 0 0 100px rgb(0, 0, 0);
-          scale: 1 0.92;
-        }
-  
-        &:active {
-          scale: 0.8 0.01;
-          background-color: #000;
-        }
-        &:active::after {
-          background-color: #000;
-          border: 20px solid #000;
-          bottom: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        }
-  
-        &::after {
-          content: " ";
-          position: absolute;
-          bottom: 5%;
-          right: 50%;
-          width: 14px;
-          height: 14px;
-          background: #000;
-          border-radius: 50%;
-          border: 4px solid #c7d0d6;
-          pointer-events: none;
-          transition: 0.5s;
-        }
-      }
+.eyebrow_container {
+  display: flex;
+  gap: 50px;
+
+  .eye_brow {
+    width: 90px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: rgb(49, 41, 41);
+  }
+
+  .left {
+    rotate: -20deg;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 90px;
+  }
+  .right {
+    rotate: 20deg;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 90px;
+  }
+}
+
+.eye_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
+  .eye {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    background: #fff;
+    box-shadow: inset 0 0 50px rgb(0, 0, 0);
+    transition: scale 0.5s, background-color 0.5s, box-shadow 0.5s;
+
+    &:hover {
+      box-shadow: inset 0 0 100px rgb(0, 0, 0);
+      scale: 1 0.92;
     }
 
+    &:active {
+      scale: 0.8 0.01;
+      background-color: #000;
+    }
+    &:active::after {
+      background-color: #000;
+      border: 20px solid #000;
+      bottom: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
 
+    &::after {
+      content: " ";
+      position: absolute;
+      bottom: 5%;
+      right: 50%;
+      width: 14px;
+      height: 14px;
+      background: #000;
+      border-radius: 50%;
+      border: 4px solid #c7d0d6;
+      pointer-events: none;
+      transition: 0.5s;
+    }
+  }
+}
 
+.btn {
+  box-shadow: 1px 2px 4px 1px #888888;
+}
 
-
- @media only screen and (max-width: 600px) {
-  .homescreen{
+@media only screen and (max-width: 600px) {
+  .homescreen {
     width: 100%;
   }
- }
-    
+}

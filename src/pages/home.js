@@ -5,7 +5,8 @@ import { Button, Container, Row, Col } from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./Home/home.scss";
 import foto from "./../IMG_20220331_123215-removebg-preview.png";
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
+import Typed from 'react-typed';
 
 // import splash from "./../../luca-nicoletti-O8CHmj0zgAg-unsplash-removebg-preview.png";
 
@@ -46,20 +47,6 @@ function Home() {
         };
     }, []);
 
-
-    // const download = (e) => {
-    //     e.preventDefault();
-    //     axios({
-    //         url: 'http://localhost:3000',
-    //         method: 'GET',
-    //         responseType: 'blob',
-    //         // withCredentials: 'include'
-    //     }).then((res) => {
-    //         console.log(res);
-    //         fileDownload(res.data, "Julius'resume.pdf")
-    //     })
-
-    // }
     return (
         <React.Fragment>
             <Container>
@@ -74,18 +61,28 @@ function Home() {
                         <div className="intro">
                             <h1 className="name" style={{ fontWeight: "700" }}>IRUNGU G.</h1>
                             <h3>Hello_</h3>
-                            <h2>I'm a Software Developer</h2>
+                            <h2>I'm a <span> <Typed
+                                strings={[
+                                    "Software Engineer",
+                                    "Full Stack Developer",
+                                    "Coder"]}
+                                typeSpeed={40}
+                                backSpeed={50}
+                                // attr="placeholder"
+                                loop >
+                                {/* <input type="text" /> */}
+                            </Typed></span> </h2>
                             <p>
-                                A full Stack developer with incredible skills in creating successful websites that meet customer needs. I am proficient enough in NodeJS, ReactJs, MongoDB, TypeScript/JavaScript; well-versed in design standards and user preferences.
+                                A full Stack developer with incredible skills in creating successful websites that meet customer needs. I am proficient enough in TypeScript(JavaScript), NodeJS, ReactJs, MongoDB, Tailwind CSS, Bootstrap CSS
                             </p>
                             <div className="btns">
-                                <a href="My Resume..pdf" download='My Resume..pdf'>
-                                {/* <Button variant="dark" style={{ marginRight: "0.7%" }} onClick={(e) => download(e)}>Download Resume</Button> */}
-                                <Button variant="dark" style={{ marginRight: "0.7%" }}>Download Resume</Button>
+                                <a href='JuliusGithinji.CV.pdf' download='JuliusGithinji.CV.pdf'>
+                                    {/* <Button variant="dark" style={{ marginRight: "0.7%" }} onClick={(e) => download(e)}>Download Resume</Button> */}
+                                    <Button variant="dark" style={{ marginRight: "0.7%" }}>Download Resume</Button>
                                     {/* <Button>download</Button> */}
                                 </a>
                                 <NavLink to="/contact" as={NavLink}>
-                                    <Button variant="dark">Hire me</Button>
+                                    <Button class="btn" variant="dark">Hire me</Button>
                                 </NavLink>
                             </div>
                         </div>
