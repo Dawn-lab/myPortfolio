@@ -1,32 +1,38 @@
 import React from "react";
-import { Card, Button, Container } from 'react-bootstrap';
-// import Projo from "../components/project";
-// import github from "./../assets/github-icon-1.svg";
-// import linkedin from "./../assets/linkedin-icon-1.svg";
-// import twitter from "./../assets/twitter-6.svg";
-
+import { Row, Col } from 'react-bootstrap';
 import projects from "./../data/projects.json"
-// import upwork from "./../../upwork.svg";
+import { Projo } from "../components/project";
 
 function Project() {
     return (
         <>
-            {projects.map(project => {
-                return (
-                    <Container className="bg-white shadow-sm mb-3">
-                    <Card>
-                        {/* <Card.Header>Featured</Card.Header> */}
-                        <Card.Body>
+            {/* <h1>My Projects</h1>
+            <Row className="g-3" md={2} xs={1} lg={3}>
+                {projects.map(project => (
+                    <Col key={project.id}>
+                        <Card>
                             <Card.Title>{project.title}</Card.Title>
-                            <Card.Text>
-                                {Project.tools}
-                            </Card.Text>
-                            <Button variant="dark" href={project.link}>Visit Repository</Button>
-                        </Card.Body>
-                    </Card>
-                    </Container>
-                )
-            })}
+                            <Card.Img src={project.image} />
+                            <Card.Body>
+                                <Card.Text className="d-flex justify-content-space-between align-items-baseline">
+                                    <span>{project.description}</span>
+                                    <Button variant="dark" href={project.link}>Visit Repository</Button>
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                ))}
+            </Row> */}
+            <h1>My Projects</h1>
+            <Row className="g-3" md={2} xs={1} lg={3}>
+                {projects.map(project => (
+                    <Col key={project.id}>
+                        <Projo {...project} />
+                        {/* <h1>ughkjgjk</h1> */}
+                    </Col>
+                ))}
+            </Row>
+
         </>
     )
 }

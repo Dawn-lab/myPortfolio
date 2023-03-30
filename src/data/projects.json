@@ -1,32 +1,37 @@
 [
     {
         "id": 1,
-        "title": "e-shop",
-        "tools": "ReactJS, JS",
-        "link": "https://github.com/Dawn-lab/eshop"
+        "image": "/images/IMG_0099.JPG",
+        "title": "Web 3 Crowdfunding platform",
+        "description": "ReactJS, TS, Solidity, TailwindCSS",
+        "link": "https://github.com/Dawn-lab/client"
     },
     {
-        "id": 4,
+        "id": 2,
+        "image": "/images/IMG_0099.JPG",
         "title": "ts-e-shop",
-        "tools": "ReactJS, TS",
+        "description": "ReactJS, TS",
         "link": "https://github.com/Dawn-lab/ts-e-shop"
     },
     {
         "id": 3,
+        "image": "/images/IMG_0099.JPG",
         "title": "my_portfolio",
-        "tools": "NodeJS, ReactJS, JS",
+        "description": "NodeJS, ReactJS, JS, Bootstrap",
         "link": "https://github.com/Dawn-lab/myportfolio"
     },
     {
-        "id": 2,
+        "id": 4,
+        "image": "/images/IMG_0099.JPG",
         "title": "News Website",
-        "tools": "NodeJS, ReactJS, JS, EJS, CSS, HTML",
+        "description": "NodeJS, ReactJS, JS, EJS, CSS, HTML",
         "link": "https://github.com/Julieus-G/News-Website"
     },
     {
         "id": 5,
+        "image": "/images/IMG_0099.JPG",
         "title": "Data Structures and Algorithms",
-        "tools": "ReactJS, JS",
+        "description": "C",
         "link": "https://github.com/Julieus-G/Algorithms"
     }
 ]

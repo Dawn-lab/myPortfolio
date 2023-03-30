@@ -59,7 +59,7 @@ function Home() {
                         <div></div>
                         {/* <h2>This is the home page</h2> */}
                         <div className="intro">
-                            <h1 className="name" style={{ fontWeight: "700" }}>IRUNGU G.</h1>
+                            <h1 className="name" style={{ fontWeight: "700" }}>JULIUS G. IRUNGU</h1>
                             <h3>Hello_</h3>
                             <h2>I'm a <span> <Typed
                                 strings={[
@@ -82,7 +82,7 @@ function Home() {
                                     {/* <Button>download</Button> */}
                                 </a>
                                 <NavLink to="/contact" as={NavLink}>
-                                    <Button class="btn" variant="dark">Hire me</Button>
+                                    <Button className="btn" variant="dark">Hire me</Button>
                                 </NavLink>
                             </div>
                         </div>

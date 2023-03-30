@@ -7,7 +7,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: black; */
+  /* background-image: url('./../public/sebastian-kanczok-mNEYVEjalV8-unsplash.jpg'); */
+  background-color: #EEEEEE;
+  background-size: cover;
   /* color: antiquewhite; */
 }
 
@@ -15,3 +17,4 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
