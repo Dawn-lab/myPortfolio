@@ -2,20 +2,15 @@ import React from "react";
 import { useState, useRef } from "react";
 import emailjs from '@emailjs/browser';
 import { Button, Form } from "react-bootstrap"
-// import Alert from 'react-bootstrap/Alert';
 import 'react-phone-number-input/style.css'
 import PhoneInput, { isPossiblePhoneNumber, isValidPhoneNumber, formatPhoneNumberIntl } from 'react-phone-number-input'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { FaGithub, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
-// import NavLink from "react-bootstrap";
-import { NavLink } from "react-router-dom"
-// import github from '../assets/github-icon-1.svg'
 
 function Contact() {
 
     const [name, setName] = useState('');
-    const [companyName, setCompanyName] = useState('');
+    const [subject, setSubject] = useState('');
     const [emailAddress, setEmailAddress] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const form = useRef();
@@ -32,7 +27,7 @@ function Contact() {
 
                 // Resetting the form on submission
                 setName('')
-                setCompanyName('')
+                setSubject('')
                 setEmailAddress('')
                 setPhoneNumber('')
             }, (error) => {
@@ -69,10 +64,10 @@ function Contact() {
                         <Form.Label>I am </Form.Label>
                         <Form.Control type="text" value={name} maxLength="96" name="user_name" placeholder="First Name and Last Name" onChange={(e) => setName(e.target.value)} required />
                     </Form.Group>
-                    <div> from </div>
+                    <div> with the following Subject </div>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                        <Form.Label>Company Name</Form.Label>
-                        <Form.Control type="text" value={companyName} name="user_company" maxLength="100" placeholder="Company's name(optional)" onChange={(e) => setCompanyName(e.target.value)} />
+                        {/* <Form.Label>Subject</Form.Label> */}
+                        <Form.Control type="text" value={subject} name="subject" maxLength="150" placeholder="Subject" onChange={(e) => setSubject(e.target.value)} />
                     </Form.Group>
                 </div>
                 <div> and I'm contacting you to: </div>
@@ -111,45 +106,19 @@ function Contact() {
                             }
                         </Form.Group>
                     </div>
-                    <div className="right">
-                        <div className="fullName"> Thank you {!`${name}` ? "..." : `${name}`} </div>
-                        <div> Julius will get back to you in a few</div>
+                    <div className="right justify-content-between d-flex">
+                        <div className="fullName"> Thank you <span>{!`${name}` ? "..." : `${name}`}, </span> Julius will get back to you in a few</div>
                         <div>
-                            <Button variant="dark" type="submit" value="send" onClick={notify}>
+                            <Button className="button"  variant="dark" type="submit" value="send" onClick={notify}>
                                 Submit
                             </Button>
                             <ToastContainer />
                         </div>
-                        <div id="status"> </div>
                     </div>
+                        <div id="status"> </div>
                 </div>
             </Form>
-            <footer>
-                <div className="socials">
-                    <NavLink to="https://github.com/Dawn-lab" as={NavLink}>
-
-                    </NavLink>
-                    <span className="git">
-                        {/* <img src={github} alt="" /> */}
-                        <Button variant="none"><FaGithub /></Button>
-                    </span>
-                    <NavLink to="https://twitter.com/Julieus_G" as={NavLink}>
-
-                        <span className="twitter">
-                            {/* <img src="./assets/svg/twitter-color.svg" alt="" /> */}
-                            <Button variant="none"><FaTwitter /></Button>
-                        </span>
-                    </NavLink>
-                    <NavLink to="https://www.linkedin.com/in/julieus/" as={NavLink}>
-
-                        <span className="linkedin">
-                            {/* <img src="./assets/svg/linkedin-square-color.svg" alt="" /> */}
-                            <Button variant="none"><FaLinkedinIn /></Button>
-                        </span>
-                    </NavLink>
-                </div>
-                Julius Githinji • 2023
-            </footer>
+            
         </>
     );
 }

@@ -1,10 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
 // import Layout from './pages/Layout/layout';
-import Home from './pages/home';
+import About from './pages/About/about';
 import Contact from './pages/contact';
 import Project from './pages/projects';
 import { Container } from 'react-bootstrap';
 import NavBar from './components/navBar';
+import Footer from './components/footer';
 // import './App.css';
 
 function App() {
@@ -13,11 +14,15 @@ function App() {
         <NavBar/>
         <Container className="mb-4"> 
             <Routes>
-              <Route path="/" element={<Home/>}/>
+              <Route path="/About" element={<About/>}/>
               <Route path="/contact" element={<Contact/>}/>
               <Route path="/projects" element={<Project/>}/>
             </Routes>
           </Container>
+          {/* <footer>
+            my name is JULIEUS
+          </footer> */}
+          <Footer/>
       </>
     );
 }

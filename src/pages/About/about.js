@@ -3,14 +3,14 @@ import React, { useState, useEffect, useRef } from "react";
 // import axios from "axios";
 import { Button, Container, Row, Col } from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
-import "./Home/home.scss";
-import foto from "./../IMG_20220331_123215-removebg-preview.png";
+import "./about.scss";
+import foto from "./../../IMG_20220331_123215-removebg-preview.png";
 import { NavLink } from "react-router-dom";
 import Typed from 'react-typed';
 
 // import splash from "./../../luca-nicoletti-O8CHmj0zgAg-unsplash-removebg-preview.png";
 
-function Home() {
+function About() {
     const [mouseCoordinates, setMouseCoordinates] = useState({ x: 0, y: 0 });
 
     const eyeLeft = useRef();
@@ -50,21 +50,21 @@ function Home() {
     return (
         <React.Fragment>
             <Container>
-                <Row>
-                    <Col sm={4} className=" homescreen image-wrapper">
+                <Row className="justtify-space-between">
+                    <Col sm={4} className="Aboutscreen image-wrapper">
                         <img className="image" src={foto} alt=""></img>
                         {/* <img className="splash" src={splash} alt=""></img> */}
                     </Col>
-                    <Col sm={8} className="homescreen app">
+                    <Col sm={8} className="Aboutscreen app">
                         <div></div>
-                        {/* <h2>This is the home page</h2> */}
+                        {/* <h2>This is the About page</h2> */}
                         <div className="intro">
                             <h1 className="name" style={{ fontWeight: "700" }}>JULIUS G. IRUNGU</h1>
                             <h3>Hello_</h3>
                             <h2>I'm a <span> <Typed
                                 strings={[
                                     "Software Engineer",
-                                    "Full Stack Developer",
+                                    "Full Stack Developer(Web Developer)",
                                     "Coder"]}
                                 typeSpeed={40}
                                 backSpeed={50}
@@ -73,16 +73,16 @@ function Home() {
                                 {/* <input type="text" /> */}
                             </Typed></span> </h2>
                             <p>
-                                A full Stack developer with incredible skills in creating successful websites that meet customer needs. I am proficient enough in TypeScript(JavaScript), NodeJS, ReactJs, MongoDB, Tailwind CSS, Bootstrap CSS
+                                A full Stack developer with incredible skills in creating successful websites that meet cusAboutr needs. I am proficient enough in TypeScript(JavaScript), NodeJS, ReactJs, MongoDB, Tailwind CSS, Bootstrap CSS
                             </p>
                             <div className="btns">
                                 <a href='JuliusGithinji.CV.pdf' download='JuliusGithinji.CV.pdf'>
-                                    {/* <Button variant="dark" style={{ marginRight: "0.7%" }} onClick={(e) => download(e)}>Download Resume</Button> */}
+                                    {/* <button variant="dark" style={{ marginRight: "0.7%" }} onClick={(e) => download(e)}>Download Resume</button> */}
                                     <Button variant="dark" style={{ marginRight: "0.7%" }}>Download Resume</Button>
-                                    {/* <Button>download</Button> */}
+                                    {/* <button>download</button> */}
                                 </a>
                                 <NavLink to="/contact" as={NavLink}>
-                                    <Button className="btn" variant="dark">Hire me</Button>
+                                    <Button className="button" variant="dark">Hire me</Button>
                                 </NavLink>
                             </div>
                         </div>
@@ -115,4 +115,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default About;

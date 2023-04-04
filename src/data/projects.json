@@ -1,35 +1,35 @@
 [
     {
         "id": 1,
-        "image": "/images/IMG_0099.JPG",
+        "image": "/images/What-Is-Web3-Crowdfunding.png",
         "title": "Web 3 Crowdfunding platform",
         "description": "ReactJS, TS, Solidity, TailwindCSS",
         "link": "https://github.com/Dawn-lab/client"
     },
     {
         "id": 2,
-        "image": "/images/IMG_0099.JPG",
+        "image": "/images/TSherometa__1_.png",
         "title": "ts-e-shop",
         "description": "ReactJS, TS",
         "link": "https://github.com/Dawn-lab/ts-e-shop"
     },
     {
         "id": 3,
-        "image": "/images/IMG_0099.JPG",
+        "image": "/images/index.png",
         "title": "my_portfolio",
         "description": "NodeJS, ReactJS, JS, Bootstrap",
         "link": "https://github.com/Dawn-lab/myportfolio"
     },
     {
         "id": 4,
-        "image": "/images/IMG_0099.JPG",
+        "image": "/images/maxresdefault.jpg",
         "title": "News Website",
         "description": "NodeJS, ReactJS, JS, EJS, CSS, HTML",
         "link": "https://github.com/Julieus-G/News-Website"
     },
     {
         "id": 5,
-        "image": "/images/IMG_0099.JPG",
+        "image": "/images/w4qxi1gsnhuey77654qj.webp",
         "title": "Data Structures and Algorithms",
         "description": "C",
         "link": "https://github.com/Julieus-G/Algorithms"

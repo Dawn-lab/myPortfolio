@@ -32,7 +32,6 @@ function Project() {
                     </Col>
                 ))}
             </Row>
-
         </>
     )
 }
