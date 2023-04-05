@@ -12,7 +12,7 @@ function NavBar() {
             <Container>
                 <Nav className="justify-content-end d-flex">
                     
-                    <Nav.Link to="/About" as={NavLink}><img src={logo} className="h-14 mr-3" alt="My Logo"/>Let's code</Nav.Link>
+                    <Nav.Link to="/" as={NavLink}><img src={logo} className="h-14 mr-3" alt="My Logo"/>Let's code</Nav.Link>
                     {/* <Nav.Link to="/projects" as={NavLink}>Projects</Nav.Link>
                     <Nav.Link to="/contact" as={NavLink}>Contact</Nav.Link> */}
                 </Nav>
