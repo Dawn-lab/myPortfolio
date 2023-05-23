@@ -14,17 +14,18 @@ function Contact() {
     const [emailAddress, setEmailAddress] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const form = useRef();
+    // require('dotenv').config();
+    // const Dotenv = require('dotenv-webpack');
 
 
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_13rqegh', 'template_2bu6sye', form.current, 'rvpDnRFjdCaR3M3by')
+        emailjs.sendForm( process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_PUBLIC_KEY)
             .then((result) => {
                 console.log(result.text);
                 // e.target.reset()
                 // alert(`The name you entered was: ${name}`)
-
                 // Resetting the form on submission
                 setName('')
                 setSubject('')
